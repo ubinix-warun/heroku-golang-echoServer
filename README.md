@@ -42,3 +42,12 @@ govendor install +local
 
 
 ```
+
+```
+
+heroku git:remote -a ___heroko_name___
+git push heroku master
+
+heroku open
+
+```
