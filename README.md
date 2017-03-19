@@ -1,6 +1,6 @@
 # heroku-golang-echoServer
 
-```
+```bash
 gvm use go1.6
 gvm pkgset use vs-code
 
@@ -25,4 +25,20 @@ PORT=8080 heroku local
 
 ```
 
+```bash 
 
+# use govendor
+
+# link project to ~/.gvm/pkgsets/__use__/__ps_name/src/__name__
+
+cd ~/.gvm/pkgsets/__use__/__ps_name/src/__name__
+
+govendor init
+govendor add github.com/ant0ine/go-json-rest/rest
+govendor fetch github.com/ant0ine/go-json-rest/rest
+
+govendor test +local
+govendor install +local
+
+
+```

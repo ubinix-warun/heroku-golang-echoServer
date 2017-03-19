@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"./echo"
+	"heroku-golang-echoServer/echo"
 
 	"github.com/ant0ine/go-json-rest/rest"
 )
