@@ -17,9 +17,13 @@ go get -u -v golang.org/x/tools/cmd/guru
 go get -u -v github.com/cweill/gotests/...
 go get -u -v golang.org/x/tools/cmd/godoc
 
-go get -u github.com/kardianos/govendor
+export GOPATH=$GOPATH:`pwd`
 
-go build main.go
+go build heroku-golang-echoServer
+go test heroku-golang-echoServer
+go install heroku-golang-echoServer
+
+export PATH=$PATH:`pwd`/bin
 
 PORT=8080 heroku local
 
@@ -27,11 +31,9 @@ PORT=8080 heroku local
 
 ```bash 
 
-# use govendor
+go get -u github.com/kardianos/govendor
 
-# link project to ~/.gvm/pkgsets/__use__/__ps_name/src/__name__
-
-cd ~/.gvm/pkgsets/__use__/__ps_name/src/__name__
+cd src/heroku-golang-echoServer
 
 govendor init
 govendor add github.com/ant0ine/go-json-rest/rest
