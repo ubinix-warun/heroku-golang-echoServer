@@ -18,12 +18,11 @@ go get -u -v github.com/cweill/gotests/...
 go get -u -v golang.org/x/tools/cmd/godoc
 
 export GOPATH=$GOPATH:`pwd`
+export PATH=$PATH:`pwd`/bin
 
 go build heroku-golang-echoServer
 go test heroku-golang-echoServer
 go install heroku-golang-echoServer
-
-export PATH=$PATH:`pwd`/bin
 
 PORT=8080 heroku local
 
@@ -42,10 +41,13 @@ govendor fetch github.com/ant0ine/go-json-rest/rest
 govendor test +local
 govendor install +local
 
+PORT=8080 heroku local
 
 ```
 
 ```
+
+NOW! problem when push "src/" to heroku
 
 heroku git:remote -a ___heroko_name___
 git push heroku master
