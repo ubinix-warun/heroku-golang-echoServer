@@ -47,10 +47,20 @@ PORT=8080 heroku local
 
 ```
 
-NOW! problem when push "src/" to heroku
+cd ..
+mkdir deploy-heroku
+cd deploy-heroku
+cp ../heroku-golang-echoServer/src/heroku-golang-echoServer . -R
+cd heroku-golang-echoServer
 
-heroku git:remote -a ___heroko_name___
+git init
+git add *
+git commit
+
+heroku create
 git push heroku master
+
+;heroku git:remote -a ___heroko_name___
 
 heroku open
 
